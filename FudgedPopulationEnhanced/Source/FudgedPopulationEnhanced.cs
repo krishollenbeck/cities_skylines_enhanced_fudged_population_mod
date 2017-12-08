@@ -33,11 +33,11 @@ namespace FudgedPopulationEnhanced.Source
             DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "OnLevelLoaded");
 
             var uiView = UIView.GetAView();
+		    var uiToggleButton = uiView.AddUIComponent(typeof(FudgedPopToggleButton));
+		    
 		    uiView.AddUIComponent(typeof(PopFieldMask));
             uiView.AddUIComponent(typeof(FudgedPopUiTextField));
-		    
-		    UIComponent uiToggleButton = uiView.AddUIComponent(typeof(FudgedPopToggleButton));
-
+		   	
 		    uiToggleButton.eventClick += FudgedPopToggleEvent;
 		}
 
@@ -45,22 +45,23 @@ namespace FudgedPopulationEnhanced.Source
         
         private void FudgedPopToggleEvent(UIComponent component, UIMouseEventParameter eventParam) {
             var uiView = UIView.GetAView();
-
-            UIComponent popFieldMask = uiView.FindUIComponent("PopFieldMask");
-            UIComponent fudgePopulationText = uiView.FindUIComponent("FudgedPopUiTextField");
-
-            if (popFieldMask.opacity != 0)
-            {
-                popFieldMask.opacity = 0;
-                fudgePopulationText.opacity = 0;
-                fudgePopulationText.width = 0;
-            }
+            var popFieldMask = uiView.FindUIComponent("PopFieldMask");
+            var fudgePopulationText = uiView.FindUIComponent("FudgedPopUiTextField");
             
-            else if (popFieldMask.opacity == 0)
+            // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Population Button Clicked");
+            
+            if (popFieldMask.opacity <= 0)
             {
                 popFieldMask.opacity = 1;
                 fudgePopulationText.opacity = 1;
                 fudgePopulationText.width = 200;
+            }
+            
+            else if (popFieldMask.opacity >= 1)
+            {
+                popFieldMask.opacity = 0;
+                fudgePopulationText.opacity = 0;
+                fudgePopulationText.width = 0;
             }
         }
 	 }
@@ -78,12 +79,12 @@ namespace FudgedPopulationEnhanced.Source
     {
         public override void Start()
         {
-            this.transformPosition = new Vector3(.50f, -0.93f);
-            this.width = 25;
-            this.height = 25;
-            // new Color32(49,101,99,0)
-            this.color = new Color32(204,101,99,0);
+            this.transformPosition = new Vector3(.55f, -0.9460f);
+            this.width = 26;
+            this.height = 28;
+            this.color = new Color32(49,101,99,240);
             this.spriteName = "InfoPanelIconPopulation";
+            this.opacity = 0;
         }
     }
 
@@ -94,7 +95,7 @@ namespace FudgedPopulationEnhanced.Source
             this.transformPosition = new Vector3(.58f, -0.94f);
             this.backgroundSprite = "GenericPanel";
             this.color = new Color32(0,0,0,0);
-            this.width = 204;
+            this.width = 205;
             this.height = 20;
             this.opacity = 1;
         }
@@ -128,7 +129,7 @@ namespace FudgedPopulationEnhanced.Source
 
         public override void Start()
         {   
-            this.transformPosition = new Vector3(.59f, -0.96f);
+            this.transformPosition = new Vector3(.59f, -0.9460f);
             this.width = 200;
             this.horizontalAlignment = UIHorizontalAlignment.Left;
         }
