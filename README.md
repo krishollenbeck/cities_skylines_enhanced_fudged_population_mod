@@ -11,4 +11,4 @@ The main difference is that the the fudged population actually will take place o
 If the original population is preferred then simply click on the green person icon next to the population to toggle between the two displays.
 
 ### Why would I want this?
-To make your city feel like it is bigger than what really is.
+To make your city feel like it is bigger than what really is. Ignorance is Bliss right?
