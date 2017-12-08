@@ -84,7 +84,7 @@ namespace FudgedPopulationEnhanced.Source
             this.height = 28;
             this.color = new Color32(49,101,99,240);
             this.spriteName = "InfoPanelIconPopulation";
-            this.opacity = 0;
+            this.opacity = .2f;
         }
     }
 
