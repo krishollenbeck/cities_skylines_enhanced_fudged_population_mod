@@ -54,14 +54,12 @@ namespace FudgedPopulationEnhanced.Source
             {
                 popFieldMask.opacity = 1;
                 fudgePopulationText.opacity = 1;
-                fudgePopulationText.width = 200;
             }
             
             else if (popFieldMask.opacity >= 1)
             {
                 popFieldMask.opacity = 0;
                 fudgePopulationText.opacity = 0;
-                fudgePopulationText.width = 0;
             }
         }
 	 }
@@ -92,11 +90,11 @@ namespace FudgedPopulationEnhanced.Source
     {
         public override void Start()
         {
-            this.transformPosition = new Vector3(.58f, -0.94f);
+            this.transformPosition = new Vector3(.57f, -0.93899f);
             this.backgroundSprite = "GenericPanel";
-            this.color = new Color32(0,0,0,0);
-            this.width = 205;
-            this.height = 20;
+            this.color = new Color32(47,47,47,0);
+            this.width = 218;
+            this.height = 24;
             this.opacity = 1;
         }
     }
