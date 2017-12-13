@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="98241a86-181b-41a6-80aa-d5d993b181c0" name="Default" comment="" />
+=======
+    <list default="true" id="98241a86-181b-41a6-80aa-d5d993b181c0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/indexLayout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/riderModule.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/Assembly-CSharp-firstpass.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/ICSharpCode.SharpZipLib.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/PopsApiWrapper.dll" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/FudgedPopulationEnhanced.dll" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/FudgedPopulationEnhanced.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/FudgedPopulationEnhanced.pdb" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/bin/Debug/FudgedPopulationEnhanced.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.csprojResolveAssemblyReference.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.dll" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.pdb" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/contentModel.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.FudgedPopulationEnhanced/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/FudgedPopulationEnhanced/obj/Debug/FudgedPopulationEnhanced.csproj.FileListAbsolute.txt" />
+    </list>
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +35,7 @@
       <file leaf-file-name="FudgedPopulationEnhanced.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="57">
               <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
@@ -41,11 +63,38 @@
                 <marker date="1513201035422" expanded="true" signature="4365:4530" ph="{...}" />
                 <marker date="1513201035422" expanded="true" signature="4568:4754" ph="{...}" />
                 <marker date="1513201035422" expanded="true" signature="4793:5243" ph="{...}" />
+=======
+            <state relative-caret-position="15">
+              <caret line="97" column="29" lean-forward="false" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+              <folding>
+                <marker date="1512835570634" expanded="false" signature="6:128" ph="..." />
+                <marker date="1512835570634" expanded="true" signature="171:4320" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="226:549" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="267:352" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="387:543" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="611:2076" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="772:1212" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="1358:2072" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="1763:1882" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="1943:2062" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="2126:2314" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="2365:2701" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="2408:2695" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="2742:3070" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="2785:3064" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="3127:4318" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="3202:3593" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="3350:3582" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="3641:3879" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="3917:4103" ph="{...}" />
+                <marker date="1512835570634" expanded="true" signature="4142:4312" ph="{...}" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UIHelperBase.cs" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/49/80423217/UIHelperBase.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,6 +109,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -75,6 +126,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/5e/ce68d1ee/UISprite.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/ea/87315cc5/UITextComponent.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/3a/c9438980/UITextField.cs" root0="SKIP_INSPECTION" />
@@ -92,14 +144,22 @@
     <setting file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/33/6daa1c64/UIButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/8a/10fb6b65/ILoadingExtension.cs" root0="SKIP_INSPECTION" />
+=======
+    <setting file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Class1.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/ea/87315cc5/UITextComponent.cs" />
+<<<<<<< HEAD
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/ef/847398f6/OnCheckChanged.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/2d/88b8d444/OnTextChanged.cs" />
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
         <option value="$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs" />
       </list>
     </option>
@@ -110,11 +170,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1928" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="109" />
+    <option name="y" value="70" />
+    <option name="width" value="1319" />
+    <option name="height" value="915" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -147,7 +215,6 @@
           </expand>
           <select />
         </subPane>
-        <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
       <pane id="Scratches" />
@@ -155,8 +222,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="E:/steam/steamapps/common/Cities_Skylines/Cities_Data/Managed/Assembly-CSharp.dll" />
     <property name="settings.editor.selected.configurable" value="Fsi" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ignore_missing_gitignore" value="true" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -183,13 +255,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512682866142</updated>
+<<<<<<< HEAD
       <workItem from="1512682868292" duration="25586000" />
       <workItem from="1513197452383" duration="5300000" />
+=======
+      <workItem from="1512682868292" duration="24758000" />
+      <workItem from="1512830583767" duration="5873000" />
+      <workItem from="1512839731970" duration="31000" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="30886000" />
+=======
+    <option name="totallyTimeSpent" value="30662000" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -201,17 +283,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+=======
+    <frame x="109" y="70" width="1319" height="915" extended-state="0" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16938111" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16233091" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1337953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.63543004" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19897304" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2827641" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -242,6 +336,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1513201035422" expanded="true" signature="6:128" ph="..." />
             <marker date="1513201035422" expanded="true" signature="171:5251" ph="{...}" />
             <marker date="1513201035422" expanded="true" signature="231:1021" ph="{...}" />
@@ -266,10 +361,34 @@
             <marker date="1513201035422" expanded="true" signature="4365:4530" ph="{...}" />
             <marker date="1513201035422" expanded="true" signature="4568:4754" ph="{...}" />
             <marker date="1513201035422" expanded="true" signature="4793:5243" ph="{...}" />
+=======
+            <marker date="1512835570634" expanded="false" signature="6:128" ph="..." />
+            <marker date="1512835570634" expanded="true" signature="171:4320" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="226:549" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="267:352" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="387:543" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="611:2076" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="772:1212" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1358:2072" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1763:1882" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1943:2062" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2126:2314" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2365:2701" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2408:2695" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2742:3070" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2785:3064" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3127:4318" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3202:3593" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3350:3582" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3641:3879" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3917:4103" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="4142:4312" ph="{...}" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/96/63278de6/UIComponent.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8520">
@@ -678,10 +797,39 @@
             <marker date="1512699853721" expanded="true" signature="86396:86505" ph="{...}" />
             <marker date="1512699853721" expanded="true" signature="86542:86945" ph="{...}" />
             <marker date="1512699853721" expanded="true" signature="86805:86933" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512835570634" expanded="false" signature="6:128" ph="..." />
+            <marker date="1512835570634" expanded="true" signature="171:4320" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="226:549" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="267:352" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="387:543" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="611:2076" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="772:1212" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1358:2072" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1763:1882" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1943:2062" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2126:2314" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2365:2701" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2408:2695" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2742:3070" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2785:3064" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3127:4318" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3202:3593" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3350:3582" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3641:3879" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3917:4103" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="4142:4312" ph="{...}" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A59A307A-AE65-4630-97B9-F40436C886BC/0d/d41e3c91/Vector3.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -763,10 +911,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+=======
+    <entry file="file://$PROJECT_DIR$/Class1.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/70/c1b5ce58/IUserMod.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/ea/87315cc5/UITextComponent.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/84/6e4fc5c8/UIInteractiveComponent.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/3a/c9438980/UITextField.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/25/417ba5d1/UICanvasSprite.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D017512C-3EA3-471F-9F86-5650E0721076/8a/10fb6b65/ILoadingExtension.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/33/6daa1c64/UIButton.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A59A307A-AE65-4630-97B9-F40436C886BC/84/6d34e53a/Color32.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A59A307A-AE65-4630-97B9-F40436C886BC/0d/d41e3c91/Vector3.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/5e/ce68d1ee/UISprite.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25A47B60-0D31-49C2-B1CE-35281EFACCD6/96/63278de6/UIComponent.cs" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A59A307A-AE65-4630-97B9-F40436C886BC/84/6d34e53a/Color32.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1279,6 +1446,34 @@
             <marker date="1513201035422" expanded="true" signature="4365:4530" ph="{...}" />
             <marker date="1513201035422" expanded="true" signature="4568:4754" ph="{...}" />
             <marker date="1513201035422" expanded="true" signature="4793:5243" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/FudgedPopulationEnhanced/Source/FudgedPopulationEnhanced.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="97" column="29" lean-forward="false" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+          <folding>
+            <marker date="1512835570634" expanded="false" signature="6:128" ph="..." />
+            <marker date="1512835570634" expanded="true" signature="171:4320" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="226:549" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="267:352" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="387:543" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="611:2076" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="772:1212" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1358:2072" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1763:1882" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="1943:2062" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2126:2314" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2365:2701" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2408:2695" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2742:3070" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="2785:3064" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3127:4318" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3202:3593" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3350:3582" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3641:3879" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="3917:4103" ph="{...}" />
+            <marker date="1512835570634" expanded="true" signature="4142:4312" ph="{...}" />
+>>>>>>> e722316f365b8b9fa900328c3b3d63fe0efd6026
           </folding>
         </state>
       </provider>
