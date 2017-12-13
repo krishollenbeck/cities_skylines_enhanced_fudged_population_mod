@@ -31,9 +31,11 @@ namespace FudgedPopulationEnhanced.Source
         public void OnSettingsUI(UIHelperBase helper)
         {
             var group = helper.AddGroup("Settings");
+            var toggleLinear = (UICheckBox)group.AddCheckbox("Use Linear Multiplier", false, (b) => UseLinear = b );
+            var setMultiplier = (UITextField)group.AddTextfield("Population Multiplier", "2", (value) => PopulationMultiplier = Int32.Parse(value));
             
-            group.AddCheckbox("Use Linear Multiplier", false, (checked) => UseLinear = checked);
-            group.AddTextfield("Population Multiplier", "2", (value) => PopulationMultiplier = Int32.Parse(value));
+            toggleLinear.tooltip = "Uses a linear multiplier if checked vs the Sim city 2013 algorithim";
+            setMultiplier.tooltip = "Multiply the number of agents (vanilla population) by this number";
         }
     }
     
