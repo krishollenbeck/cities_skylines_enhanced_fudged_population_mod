@@ -7,9 +7,13 @@ using System.Globalization;
 
 namespace FudgedPopulationEnhanced.Source
 {
+    
     public class FudgedPopulationEnhanced : IUserMod
     {
-       
+
+        public int PopulationMultiplier;
+        public bool UseLinear;
+        
         public string Name
         {
             get { return "SimCity Fudged Population Enhanced"; }
@@ -17,10 +21,22 @@ namespace FudgedPopulationEnhanced.Source
 
         public string Description
         {
-            get { return "Click on the population icon to display population using the Sim City 2013 fudged population algorithim!"; }
+            get
+            {
+                return "Click on the population icon in game to toggle fudged population vs actual simulated agents population!";
+            }
 
         }
+
+        public void OnSettingsUI(UIHelperBase helper)
+        {
+            var group = helper.AddGroup("Settings");
+            
+            group.AddCheckbox("Use Linear Multiplier", false, (checked) => UseLinear = checked);
+            group.AddTextfield("Population Multiplier", "2", (value) => PopulationMultiplier = Int32.Parse(value));
+        }
     }
+    
     public class PopFudgeLoadingExtension : ILoadingExtension
     {
 		// Thread: Main
@@ -47,9 +63,7 @@ namespace FudgedPopulationEnhanced.Source
             var uiView = UIView.GetAView();
             var popFieldMask = uiView.FindUIComponent("PopFieldMask");
             var fudgePopulationText = uiView.FindUIComponent("FudgedPopUiTextField");
-            
-            // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Population Button Clicked");
-            
+                        
             if (popFieldMask.opacity <= 0)
             {
                 popFieldMask.opacity = 1;
@@ -127,6 +141,12 @@ namespace FudgedPopulationEnhanced.Source
             return (int)Math.Floor(b);
         }
 
+        private int GetFudgedPopulationLinear(int a)
+        {
+            var fudgedPopulationEnhanced = new FudgedPopulationEnhanced();
+            return a * fudgedPopulationEnhanced.PopulationMultiplier;
+        }
+
         public override void Start()
         {   
             this.transformPosition = new Vector3(.59f, -0.9460f);
@@ -136,8 +156,14 @@ namespace FudgedPopulationEnhanced.Source
 
         public override void Update()
         {
+            var fudgedPopulationEnhanced = new FudgedPopulationEnhanced();
             var popData = GetPopData();
-            this.text = GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
+
+            var population = fudgedPopulationEnhanced.UseLinear ?
+                GetFudgedPopulationLinear(popData.Population).ToString("n0", CultureInfo.InvariantCulture) :
+                GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
+
+            this.text = population;
         }
     }
 }
