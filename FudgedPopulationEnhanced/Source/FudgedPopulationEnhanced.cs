@@ -9,10 +9,9 @@ namespace FudgedPopulationEnhanced.Source
 {
     
     public class FudgedPopulationEnhanced : IUserMod
-    {
-
-        public int PopulationMultiplier;
-        public bool UseLinear;
+    {   
+        private const string CONFIG_PATH_MULTI = "ConfigMultiplier.txt";
+        private const string CONFIG_PATH_LINEAR = "ConfigLinear.txt";
         
         public string Name
         {
@@ -28,10 +27,31 @@ namespace FudgedPopulationEnhanced.Source
 
         }
 
+        public int PopulationMultiplier
+        {
+            get
+            {
+                return Convert.ToInt32(System.IO.File.ReadAllText(CONFIG_PATH_MULTI));
+            }
+            set
+            {
+                System.IO.File.WriteAllText(CONFIG_PATH_MULTI, value.ToString());
+            }
+        }
+
+        public bool UseLinear
+        {
+            get { return Convert.ToBoolean(System.IO.File.ReadAllText(CONFIG_PATH_LINEAR)); }
+            set
+            {
+                System.IO.File.WriteAllText(CONFIG_PATH_LINEAR, value.ToString());
+            }
+        }
+
         public void OnSettingsUI(UIHelperBase helper)
         {
             var group = helper.AddGroup("Settings");
-            var toggleLinear = (UICheckBox)group.AddCheckbox("Use Linear Multiplier", false, (b) => UseLinear = b );
+            var toggleLinear = (UICheckBox)group.AddCheckbox("Use Linear Multiplier", false, (b) => { UseLinear = b; });
             var setMultiplier = (UITextField)group.AddTextfield("Population Multiplier", "2", (value) => PopulationMultiplier = Int32.Parse(value));
             
             toggleLinear.tooltip = "Uses a linear multiplier if checked vs the Sim city 2013 algorithim";
@@ -158,7 +178,10 @@ namespace FudgedPopulationEnhanced.Source
         {
             var fudgedPopulationEnhanced = new FudgedPopulationEnhanced();
             var popData = GetPopData();
-
+            
+            DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Populaton Multiplier" + fudgedPopulationEnhanced.PopulationMultiplier);
+            DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Using Linear Method" + fudgedPopulationEnhanced.UseLinear);
+            
             var population = fudgedPopulationEnhanced.UseLinear ?
                 GetFudgedPopulationLinear(popData.Population).ToString("n0", CultureInfo.InvariantCulture) :
                 GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
