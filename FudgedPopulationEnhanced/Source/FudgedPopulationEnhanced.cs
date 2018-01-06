@@ -3,15 +3,19 @@ using UnityEngine;
 using ColossalFramework;
 using ColossalFramework.UI;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace FudgedPopulationEnhanced.Source
 {
+    public static class Options
+    {
+        public static int MultiplierValue;
+    }
+
     
     public class FudgedPopulationEnhanced : IUserMod
-    {
-        private int _multiplierValue;
-        
+    {        
         public string Name
         {
             get { return "SimCity Fudged Population Enhanced"; }
@@ -26,18 +30,18 @@ namespace FudgedPopulationEnhanced.Source
 
         }
 
-        public int PopulationMultiplier
+        /*public int PopulationMultiplier
         {
-            get { return this._multiplierValue; }
+            get { return Options.MultiplierValue; }
             set { this._multiplierValue = value; }
-        }
+        }*/
 
         public void OnSettingsUI(UIHelperBase helper)
         {
             var group = helper.AddGroup("Settings");
-            var setMultiplier = (UITextField)group.AddTextfield("Population Multiplier", "2", (value) => PopulationMultiplier = Int32.Parse(value));
+            var setMultiplier = (UITextField)group.AddTextfield("Population Multiplier", "", (value) => Options.MultiplierValue = Int32.Parse(value));
            
-            setMultiplier.tooltip = "Multiply the number of agents (vanilla population) by this number";
+            setMultiplier.tooltip = "Multiply the number of agents (vanilla population) by this number. If zero then original fudged algorithim is used";
         }
     }
     
@@ -50,8 +54,7 @@ namespace FudgedPopulationEnhanced.Source
 
 		public void OnLevelLoaded(LoadMode mode)
 		{
-            DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "OnLevelLoaded");
-
+            // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "OnLevelLoaded");
             var uiView = UIView.GetAView();
 		    var uiToggleButton = uiView.AddUIComponent(typeof(FudgedPopToggleButton));
 		    
@@ -61,7 +64,10 @@ namespace FudgedPopulationEnhanced.Source
 		    uiToggleButton.eventClick += FudgedPopToggleEvent;
 		}
 
-		public void OnLevelUnloading() {}
+        public void OnLevelUnloading()
+        {
+            
+        }
         
         private void FudgedPopToggleEvent(UIComponent component, UIMouseEventParameter eventParam) {
             var uiView = UIView.GetAView();
@@ -86,9 +92,9 @@ namespace FudgedPopulationEnhanced.Source
     public class SkylinesPopulationData
     {
         public int Population { get; set; }
-        public int Unemployed { get; set; }
-        public int Workers    { get; set; }
-        public int Workplaces { get; set; }
+        // public int Unemployed { get; set; }
+        // public int Workers    { get; set; }
+        // public int Workplaces { get; set; }
     }
 
     public class FudgedPopToggleButton : UISprite
@@ -127,9 +133,9 @@ namespace FudgedPopulationEnhanced.Source
             return new SkylinesPopulationData
             {
                 Population = populationInfo.population,
-                Unemployed = populationInfo.unemployed,
-                Workers = populationInfo.workers,
-                Workplaces = populationInfo.workplaces
+                // Unemployed = populationInfo.unemployed,
+                // Workers = populationInfo.workers,
+                // Workplaces = populationInfo.workplaces
             };
         }
 
@@ -145,8 +151,7 @@ namespace FudgedPopulationEnhanced.Source
 
         private int GetFudgedPopulationLinear(int a)
         {
-            var fudgedPopulationEnhanced = new FudgedPopulationEnhanced();
-            return a * fudgedPopulationEnhanced.PopulationMultiplier;
+            return a * Options.MultiplierValue;
         }
 
         public override void Start()
@@ -158,16 +163,17 @@ namespace FudgedPopulationEnhanced.Source
 
         public override void Update()
         {
-            var fudgedPopulationEnhanced = new FudgedPopulationEnhanced();
             var popData = GetPopData();
-            
-            DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Populaton Multiplier" + fudgedPopulationEnhanced.PopulationMultiplier);
-            
-            var population = fudgedPopulationEnhanced.PopulationMultiplier > 0 ?
-                GetFudgedPopulationLinear(popData.Population).ToString("n0", CultureInfo.InvariantCulture) :
-                GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
+            if (Options.MultiplierValue > 0)
+            {
+                this.text = GetFudgedPopulationLinear(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
+                // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Populaton Multiplier" + Options.MultiplierValue);
+            }
+            else
+            {
+                this.text = GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
 
-            this.text = population;
+            }    
         }
     }
 }
