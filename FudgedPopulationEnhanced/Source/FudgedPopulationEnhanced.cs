@@ -3,17 +3,92 @@ using UnityEngine;
 using ColossalFramework;
 using ColossalFramework.UI;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Globalization;
 
 namespace FudgedPopulationEnhanced.Source
 {
-    public static class Options
+    public class Options
     {
-        public static int MultiplierValue;
+        public int Index;
+        public int LinearValue;
+        public int FudgedStartValue;
+
+        public string SaveToString()
+        {
+            return JsonUtility.ToJson(this);
+        }
     }
 
+    public class Data
+   {
+        public static string GetJsonString()
+        {
+            string path = @"FudgedPopulationEnhancedConfig.json";
+            if (File.Exists(path))
+            {
+                return File.ReadAllText(path);
+            }
+
+            return "";
+        }
+
+        public static void SaveOptions(Options options)
+        {
+            string file = @"FudgedPopulationEnhancedConfig.json";
+            string jsonString = options.SaveToString();
+            File.WriteAllText(file, jsonString);
+        }
+
+        public static int GetIndex()
+        {
+            if (Data.FileExists())
+            {
+                // Debug.Log("Get Index");
+                string savedData = Data.GetJsonString();
+                var json = JsonUtility.FromJson<Options>(savedData);
+
+                return Int32.Parse(json.Index.ToString());
+            }
+
+
+            return 0;
+        }
+
+        public static int GetSavedLinearData() 
+        {
+            if (Data.FileExists())
+            {
+                string savedData = Data.GetJsonString();
+                var json = JsonUtility.FromJson<Options>(savedData);
+
+                return Int32.Parse(json.LinearValue.ToString());
+            }
+
+            return 0;
+        }
+
+        public static int GetSavedStartingFudgeValue()
+        {
+            if (Data.FileExists())
+            {
+                string savedData = Data.GetJsonString();
+                var json = JsonUtility.FromJson<Options>(savedData);
+
+                return Int32.Parse(json.FudgedStartValue.ToString());
+            }
+
+            return 0;
+        }
+
+        public static bool FileExists() 
+        {
+            string path = @"FudgedPopulationEnhancedConfig.json";
+            return File.Exists(path);
+        }
+    }
     
+
     public class FudgedPopulationEnhanced : IUserMod
     {        
         public string Name
@@ -30,31 +105,94 @@ namespace FudgedPopulationEnhanced.Source
 
         }
 
-        /*public int PopulationMultiplier
-        {
-            get { return Options.MultiplierValue; }
-            set { this._multiplierValue = value; }
-        }*/
-
         public void OnSettingsUI(UIHelperBase helper)
         {
+            Options options = new Options();
+            string placeholderValue = "";
+            int initialSelection = 0;
+
+            if (Data.GetIndex() == 0)
+            {
+                options.FudgedStartValue = Data.GetSavedStartingFudgeValue();
+                placeholderValue = Data.GetSavedStartingFudgeValue().ToString();
+                initialSelection = 0;
+
+                // Debug.Log("Set Fudged");
+            }
+
+            if (Data.GetIndex() == 1)
+            {
+                options.LinearValue = Data.GetSavedLinearData();
+                placeholderValue = Data.GetSavedLinearData().ToString();
+                initialSelection = 1;
+
+                // Debug.Log("Set Linear");
+            }
+
+            // Debug.Log("initial selection " + initialSelection);
+            // Debug.Log("placeholder " + placeholderValue);
+
             var group = helper.AddGroup("Settings");
-            var setMultiplier = (UITextField)group.AddTextfield("Population Multiplier", "", (value) => Options.MultiplierValue = Int32.Parse(value));
-           
-            setMultiplier.tooltip = "Multiply the number of agents (vanilla population) by this number. If zero then original fudged algorithim is used";
+
+            string[] selections = new string[] { "Fudge Start Value", "Linear" };
+            var uIDropDown = (UIDropDown)group.AddDropdown("Select One", selections, initialSelection, (v) =>
+            {
+                options.Index = v;
+
+                // Debug.Log("Selection made -> " + v);
+                Data.SaveOptions(options);
+            });
+
+            var uiTextField = (UITextField)group.AddTextfield("Value", placeholderValue, (v) => {
+                if (Data.GetIndex() == 0)
+                {
+                    options.FudgedStartValue = String.IsNullOrEmpty(v.ToString()) ? 0 : Int32.Parse(v);
+                    options.LinearValue = 0;
+                }
+
+                if (Data.GetIndex() == 1)
+                {
+                    options.LinearValue = String.IsNullOrEmpty(v.ToString()) ? 0 : Int32.Parse(v);
+                    options.FudgedStartValue = 0;
+                }
+
+                Data.SaveOptions(options);
+            });
+
+            uIDropDown.tooltip = @"-INFO-
+                LINEAR: Multiply the number of agents (vanilla population) by this number. If zero then original fudged algorithm is used
+                FUDGE START: The starting population value for at what point the numbers will be fudged. For example default fudge is 500. Max value is 40845. If greater than 40845, value will default to 500";
+
+            var submitButton = (UIButton)group.AddButton("Save Changes", () =>
+            {
+                Data.SaveOptions(options);
+            });
         }
     }
     
     public class PopFudgeLoadingExtension : ILoadingExtension
     {
 		// Thread: Main
-		public void OnCreated(ILoading loading) {}
+		public void OnCreated(ILoading loading) 
+        {
+            string path = @"FudgedPopulationEnhancedConfig.json";
+            if (!File.Exists(path))
+            {
+                // Debug.Log("FudgedPopulationEnhancedConfig.json does not exist");
+                Options options = new Options();
+                options.FudgedStartValue = 0;
+                options.Index = 0;
+                options.LinearValue = 0;
+
+                Data.SaveOptions(options);
+            }
+        }
+
 		// Thread: Main
 		public void OnReleased() {}
 
 		public void OnLevelLoaded(LoadMode mode)
 		{
-            // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "OnLevelLoaded");
             var uiView = UIView.GetAView();
 		    var uiToggleButton = uiView.AddUIComponent(typeof(FudgedPopToggleButton));
 		    
@@ -66,7 +204,7 @@ namespace FudgedPopulationEnhanced.Source
 
         public void OnLevelUnloading()
         {
-            
+
         }
         
         private void FudgedPopToggleEvent(UIComponent component, UIMouseEventParameter eventParam) {
@@ -88,15 +226,6 @@ namespace FudgedPopulationEnhanced.Source
         }
 	 }
     
-    
-    public class SkylinesPopulationData
-    {
-        public int Population { get; set; }
-        // public int Unemployed { get; set; }
-        // public int Workers    { get; set; }
-        // public int Workplaces { get; set; }
-    }
-
     public class FudgedPopToggleButton : UISprite
     {
         public override void Start()
@@ -121,41 +250,49 @@ namespace FudgedPopulationEnhanced.Source
             this.height = 24;
             this.opacity = 1;
         }
+
     }
-    
+
     public class FudgedPopUiTextField : UITextField
     {
-                
-        private SkylinesPopulationData GetPopData()
+        private int GetFudgedPopulation(int currentPopulation)
         {
-            var populationInfo = Singleton<PopulationInfoViewPanel>.instance;
+            string savedData = Data.GetJsonString();
+            var json = JsonUtility.FromJson<Options>(savedData);
 
-            return new SkylinesPopulationData
+            int endValue = 40845;
+            int startingFudgeValue = json.FudgedStartValue != 0 && json.FudgedStartValue < endValue ? json.FudgedStartValue : 500;
+
+            // Debug.Log(startingFudgeValue.ToString());
+
+            if (startingFudgeValue >= currentPopulation)
             {
-                Population = populationInfo.population,
-                // Unemployed = populationInfo.unemployed,
-                // Workers = populationInfo.workers,
-                // Workplaces = populationInfo.workplaces
-            };
-        }
+                return currentPopulation;
+            }
+                
+            if (endValue < currentPopulation)
+            {
+                return (int)Math.Floor(8.25 * currentPopulation);
+            }
+                
+            var b = Math.Pow(currentPopulation - 500, 1.2) + 500;
+            int fudgedPopulation = (int)Math.Floor(b);
 
-        private int GetFudgedPopulation(int a)
-        {
-            if (500 >= a)
-                return a;
-            if (40845 < a)
-                return (int)Math.Floor(8.25 * a);
-            var b = Math.Pow(a - 500, 1.2) + 500;
-            return (int)Math.Floor(b);
+            return fudgedPopulation;
         }
 
         private int GetFudgedPopulationLinear(int a)
         {
-            return a * Options.MultiplierValue;
+            string savedData = Data.GetJsonString();
+            var json = JsonUtility.FromJson<Options>(savedData);
+
+            int linearPopulation = json.LinearValue > 0 ? Data.GetSavedLinearData() : json.LinearValue;
+
+            return a * linearPopulation;
         }
 
         public override void Start()
-        {   
+        {
             this.transformPosition = new Vector3(.59f, -0.9460f);
             this.width = 200;
             this.horizontalAlignment = UIHorizontalAlignment.Left;
@@ -163,17 +300,24 @@ namespace FudgedPopulationEnhanced.Source
 
         public override void Update()
         {
-            var popData = GetPopData();
-            if (Options.MultiplierValue > 0)
-            {
-                this.text = GetFudgedPopulationLinear(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
-                // DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Populaton Multiplier" + Options.MultiplierValue);
-            }
-            else
-            {
-                this.text = GetFudgedPopulation(popData.Population).ToString("n0", CultureInfo.InvariantCulture);
+            PopulationInfoViewPanel panel = new PopulationInfoViewPanel();
+            int population = panel.population;
 
-            }    
+            // Debug.Log("Current index is " + Data.GetIndex());
+
+            if (Data.GetIndex() == 0)
+            {
+                // Debug.Log("Update Fudged Data");
+                // Updated UI to use default fudged population logic
+                this.text = GetFudgedPopulation(population).ToString("n0", CultureInfo.InvariantCulture);
+            }
+            
+            if (Data.GetIndex() == 1)
+            {
+                // Debug.Log("Update Linear Data");
+                // Update UI value in game
+                this.text = GetFudgedPopulationLinear(population).ToString("n0", CultureInfo.InvariantCulture);
+            }
         }
     }
 }
